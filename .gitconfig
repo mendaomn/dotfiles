@@ -1,0 +1,13 @@
+[user]
+    name = Alessandro Menduni
+    email = menduni@westwingsolutions.com
+[alias]
+    ad = add .
+    br = branch
+    ci = commit
+    co = checkout
+    lo = log --oneline -n 15
+    st = status
+    up = pull --rebase
+[push]
+    default = current
