@@ -1,13 +1,21 @@
 [user]
     name = Alessandro Menduni
     email = menduni@westwingsolutions.com
+
 [alias]
-    ad = add .
+    ad = add
     br = branch
-    ci = commit
+    cm = commit -m
     co = checkout
+    l = log --name-status
     lo = log --oneline -n 15
+    los = log --pretty=format:'%C(bold red)%h%Creset -%C(italic yellow)%d%Creset%C(bold white) %s -%Creset%C(blue) <%an>%Creset' --abbrev-commit
     st = status
     up = pull --rebase
+
+[branch]
+  autosetuprebase = always
+
 [push]
     default = current
+    
