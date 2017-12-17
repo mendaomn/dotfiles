@@ -1,3 +1,5 @@
+# https://github.com/gf3/dotfiles
+
 [user]
     name = Alessandro Menduni
     email = menduni@westwingsolutions.com
@@ -14,7 +16,7 @@
     up = pull --rebase
 
 [branch]
-  autosetuprebase = always
+    autosetuprebase = always
 
 [push]
     default = current
