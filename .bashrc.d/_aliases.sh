@@ -20,3 +20,9 @@ alias gr='cd $(git rev-parse --show-toplevel)'
 
 # -- dotfiles management
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# -- json prettify
+prettyJSON() {
+    cat "$1" | jq ."$2" -C | less -R
+}
+alias jqq='prettyJSON'
