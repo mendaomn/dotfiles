@@ -26,13 +26,3 @@ prettyJSON() {
     cat "$1" | jq ."$2" -C | less -R
 }
 alias jqq='prettyJSON'
-
-# -- nvm according to .nvmrc
-nvc() {
-  if [ ! -f .nvmrc ]; then
-    echo "Missing .nvmrc"
-    else 
-    nvm use $(cat .nvmrc)
-  fi
-}
-alias nvc='nvc'
