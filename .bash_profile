@@ -9,3 +9,9 @@ fi
 if [[ $- == *i* && -f ~/.bashrc ]]; then
     . ~/.bashrc
 fi
+
+# Set up bash completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+# Set java8 as default
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)

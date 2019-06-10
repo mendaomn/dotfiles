@@ -1,2 +1,2 @@
 # Configures autojump
-. /usr/share/autojump/autojump.sh
+# . /usr/share/autojump/autojump.sh
