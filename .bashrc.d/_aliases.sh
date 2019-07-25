@@ -11,20 +11,27 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # -- cd
+alias ..="cd .."
 alias dev='cd $HOME/Documents/Development'
 
 # -- git
 alias g='git'
-alias gr='cd $(git rev-parse --show-toplevel)'
+alias groot='cd $(git rev-parse --show-toplevel)'
 
 # -- dotfiles management
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# -- npm
+alias ni='npm i'
+alias nio='npm i --offline'
 
 # -- json prettify
 prettyJSON() {
     cat "$1" | jq ."$2" -C | less -R
 }
 alias jqq='prettyJSON'
+
+# -- last commmand output
 
 export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
@@ -54,6 +61,7 @@ alias kgp='kubectl get pods'
 alias kgpw='watch kubectl get pods'
 alias kgn='kubectl get nodes'
 alias kgnw='watch kubectl get nodes'
+alias kgs='kubectl get svc'
 
 # Switch kubernetes context to STAGING
 kstaging() {
@@ -73,4 +81,11 @@ kprod() {
   cp $prod_config_path $config_path
 
   echo "You are now in the PROD context"
+}
+
+# Exec into any pod by name
+kbash() {
+  pod=`kubectl get pods --all-namespaces -o custom-columns=NAME:.metadata.name | grep $1`
+  echo "Running shell into: $pod"
+  kubectl exec -it $pod bash
 }
