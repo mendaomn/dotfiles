@@ -14,6 +14,9 @@ alias egrep='egrep --color=auto'
 alias ..="cd .."
 alias dev='cd $HOME/Documents/Development'
 
+# -- rm
+alias rimraf="rm -rf"
+
 # -- git
 alias g='git'
 alias groot='cd $(git rev-parse --show-toplevel)'
