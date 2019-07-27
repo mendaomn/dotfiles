@@ -26,7 +26,7 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # -- npm
 alias ni='npm i'
-alias nio='npm i --offline'
+alias nio='npm i --prefer-offline'
 
 # -- json prettify
 prettyJSON() {
