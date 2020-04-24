@@ -92,3 +92,20 @@ kbash() {
   echo "Running shell into: $pod"
   kubectl exec -it $pod bash
 }
+
+# -- ssh shortcuts
+sshost() {
+  ssh amenduni@$1.dnshosting.local
+}
+
+# -- core
+alias corerun='rimraf target && mvn clean && mvn jetty:run -Pdev -Dhttp.port=8080'
+alias coredebug='rimraf target && mvn clean && mvndebug jetty:run -Pdev -Dhttp.port=8080'
+
+# -- sprint
+alias week='date +%V'
+
+# -- git flow + trello
+gflowstart() {
+  git flow feature start $(echo $1 | sed 's!https://trello.com/c/!!' | sed 's!/!-!')
+}

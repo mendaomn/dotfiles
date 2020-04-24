@@ -1,8 +1,8 @@
 # https://github.com/gf3/dotfiles
 
 [user]
-    name = Alessandro Menduni
-    email = alessandro.menduni@host.it
+	name = Alessandro Menduni
+	email = alessandro.menduni@host.it
 
 [alias]
     ad = add
@@ -22,6 +22,7 @@
 [core]
 	editor = nano
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = /Users/alessandromenduni/.gitignore
 [color]
 	ui = true
 [color "diff-highlight"]
